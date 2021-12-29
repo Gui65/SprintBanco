@@ -45,12 +45,6 @@ public class Main {
 		}
 	}
 	}while(opcao != 5);
-		
-//		c1.CadastroDados(null, null);
-//		c1.conta.Depositar(0);
-//		c1.conta.Transferir(0);
-//		c1.conta.ConsultarSaldo();
-		//c1.Status();
 
 	}
 

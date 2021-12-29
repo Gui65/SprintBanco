@@ -1,15 +1,19 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Conta {
 	
-	private String numero;
+	private int numero;
 	private double saldo;
 	private Cliente cliente;
 	
 	Scanner ler = new Scanner(System.in);
 	
+	
 	public Conta() { //constructor
 		this.setSaldo(0.0);
+//		this.setNumero(gerador.nextInt());
+		
 	}
 	
 	public void Transferir(double v) {
@@ -36,8 +40,8 @@ public class Conta {
 		System.out.println("Nome: "+ cliente.getNome());
 		System.out.println("Cpf: "+ cliente.getCpf());
 		System.out.println("Saldo: "+ this.getSaldo());
-		
-		if(this.getSaldo() >= 15000.00) {
+		System.out.println("O número da conta é: " + this.getNumero());
+		if(this.getSaldo() >= 15000.00) { // Valida o tipo de conta
 			cliente.setTipo(TipoCliente.PREMIUM);
 		}else if(this.getSaldo() >= 5000.00 && this.getSaldo() <= 14999.00) {
 			cliente.setTipo(TipoCliente.SUPER);
@@ -49,11 +53,11 @@ public class Conta {
 	}
 	
 	
-	public String getNumero() {
+	public int getNumero() {
 		return this.numero;
 	}
-	public void setNumero(String n) {
-		this.numero = n;
+	public void setNumero(int i) {
+		this.numero = i;
 	}
 	public double getSaldo() {
 		return this.saldo;
