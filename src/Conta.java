@@ -39,8 +39,9 @@ public class Conta {
 		
 		System.out.println("Nome: "+ cliente.getNome());
 		System.out.println("Cpf: "+ cliente.getCpf());
-		System.out.println("Saldo: "+ this.getSaldo());
-		System.out.println("O número da conta é: " + this.getNumero());
+		System.out.println("Saldo: "+ cliente.conta.getSaldo());
+		System.out.println("O número da conta é: " + getNumero());
+		
 		if(this.getSaldo() >= 15000.00) { // Valida o tipo de conta
 			cliente.setTipo(TipoCliente.PREMIUM);
 		}else if(this.getSaldo() >= 5000.00 && this.getSaldo() <= 14999.00) {

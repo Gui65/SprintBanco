@@ -8,7 +8,8 @@ public class Cliente {
 	private String cpf;
 	private String nome;
 	private TipoCliente tipo;
-	public Conta conta;
+	
+	public Conta conta = new Conta();
 	
 	Random gerador = new Random();
 	
@@ -23,10 +24,10 @@ public class Cliente {
 		
 	}
 	
-	public void CadastroDados(String n, String c) {
+	public void CadastroDados() {
 		Scanner ler = new Scanner(System.in);
 		System.out.print("Digite seu nome: ");
-		n = ler.nextLine();
+		String n = ler.nextLine();
 		this.conta.setNumero(gerador.nextInt());
 		
 		while(this.conta.getNumero() < 99999 || this.conta.getNumero() >= 999999) { //Gerando um número aleatorio de 6 digitos para a conta
@@ -35,7 +36,7 @@ public class Cliente {
 		
 		do{
 			System.out.print("Digite seu CPF: ");
-			c = ler.next();
+			String c = ler.next();
 			this.setCpf(c);
 			
 			if(ValidarCpf.isCPF(this.getCpf()) == true) { //Verifica se o CPF está correto
